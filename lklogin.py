@@ -1,5 +1,6 @@
 import sys
 import urllib
+
 username="username"
 password="password"
 
@@ -13,9 +14,11 @@ if (sys.version_info > (3, 0)):
     req=urllib.request.Request(url,data)
     resp=urllib.request.urlopen(req)
     resptxt=resp.read()
+    resp.close()
 else:
     import urllib2
     data=urllib.urlencode(values)
     req=urllib2.Request(url,data)
     resp=urllib2.urlopen(req)
     resptxt=resp.read()
+    resp.close()
